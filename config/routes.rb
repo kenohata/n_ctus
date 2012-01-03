@@ -2,9 +2,11 @@ Connectus::Application.routes.draw do
   
   devise_for :users
 
-  resources :readings
+  resources :users do
+    resource :profile
+  end
 
-  resources :profiles
+  resources :readings
 
   resources :direct_massages
 
