@@ -2,7 +2,7 @@ class NoteImagesController < ApplicationController
   # GET /note_images
   # GET /note_images.json
   def index
-    @note_images = NoteImage.all
+    @note_images = Note.find(params[:note_id]).note_images
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class NoteImagesController < ApplicationController
   # GET /note_images/new
   # GET /note_images/new.json
   def new
-    @note_image = NoteImage.new
+    @note_image = Note.find(params[:note_id]).note_images.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +44,7 @@ class NoteImagesController < ApplicationController
 
     respond_to do |format|
       if @note_image.save
-        format.html { redirect_to @note_image, notice: 'Note image was successfully created.' }
+        format.html { redirect_to [@note_image.note, @note_image], notice: 'Note image was successfully created.' }
         format.json { render json: @note_image, status: :created, location: @note_image }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class NoteImagesController < ApplicationController
 
     respond_to do |format|
       if @note_image.update_attributes(params[:note_image])
-        format.html { redirect_to @note_image, notice: 'Note image was successfully updated.' }
+        format.html { redirect_to [@note_image.note, @note_image], notice: 'Note image was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class NoteImagesController < ApplicationController
     @note_image.destroy
 
     respond_to do |format|
-      format.html { redirect_to note_images_url }
+      format.html { redirect_to note_note_images_url(params[:note_id]) }
       format.json { head :ok }
     end
   end

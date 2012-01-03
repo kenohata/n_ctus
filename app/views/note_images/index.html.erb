@@ -15,13 +15,13 @@
     <td><%= note_image.note_id %></td>
     <td><%= note_image.title %></td>
     <td><%= note_image.image %></td>
-    <td><%= link_to 'Show', note_image %></td>
-    <td><%= link_to 'Edit', edit_note_image_path(note_image) %></td>
-    <td><%= link_to 'Destroy', note_image, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [note_image.note, note_image] %></td>
+    <td><%= link_to 'Edit', edit_note_note_image_path(note_image.note, note_image) %></td>
+    <td><%= link_to 'Destroy', [note_image.note, note_image], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Note image', new_note_image_path %>
+<%= link_to 'New Note image', new_note_note_image_path(params[:note_id]) %>
