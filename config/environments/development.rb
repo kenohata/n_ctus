@@ -32,12 +32,12 @@ Connectus::Application.configure do
   #setting for devise confirm
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'baci.lindsaar.net',
-    :user_name            => '<username>',
-    :password             => '<password>',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true 
+    :address => "smtp.gmoserver.jp",
+    :port => 587,
+    :domain => 'planforgrowth.org',
+    :user_name => 'connectus_test@planforgrowth.org',
+    :password => '4iN0Kirj',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
     }
 end
