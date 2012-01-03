@@ -10,10 +10,20 @@ class User < ActiveRecord::Base
   
   has_one :profile
   
+  before_validation :student_number_to_email
   after_create :generate_profile
   
   def generate_profile
     profile = Profile.new(user_id: self.id)
     profile.save
   end
+  
+  def student_number_to_email
+    self.email = "j#{self.email}@ed.tus.ac.jp"
+  end
+  
+  def email_to_student_number
+    self.email = self.email[1,7]
+  end
+  
 end

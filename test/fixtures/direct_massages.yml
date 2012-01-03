@@ -2,12 +2,12 @@
 
 one:
   to_id: 1
-  from_id: 1
-  content: MyText
-  unread: false
+  from_id: 3
+  content: こんどカナルで食べましょう。
+  unread: true
 
 two:
-  to_id: 1
+  to_id: 3
   from_id: 1
-  content: MyText
-  unread: false
+  content: そうしましょう。
+  unread: true

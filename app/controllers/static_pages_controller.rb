@@ -1,5 +1,10 @@
 class StaticPagesController < ApplicationController
-  def home
+  def campus
+    
+  end
+  
+  def reading
+    
   end
 
 end

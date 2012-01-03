@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
   user_id: 1
-  micropost_id: 1
-  content: MyString
+  micropost_id: 3
+  content: どうぞいらっしゃい
 
 two:
-  user_id: 1
-  micropost_id: 1
-  content: MyString
+  user_id: 3
+  micropost_id: 3
+  content: いよう！よろしく！

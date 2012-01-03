@@ -2,8 +2,17 @@
 
 one:
   user_id: 1
-  content: MyString
+  content: My first tweet.はじめてtwitterやってみました。
 
 two:
   user_id: 1
-  content: MyString
+  content: こんなかんじでいいんだろうか
+
+three:
+  id: 3
+  user_id: 3
+  content: 斉脇ですはじめまして。
+
+four:
+  user_id: 1
+  content: うおっ斉脇キター
