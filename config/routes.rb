@@ -1,19 +1,19 @@
 Connectus::Application.routes.draw do
+  
   resources :readings
 
   resources :profiles
 
-  resources :note_images
-
   resources :direct_massages
 
-  resources :comments
+  resources :microposts do
+    resources :comments
+  end
 
-  resources :microposts
-
-  resources :pages
-
-  resources :notes
+  resources :notes do
+    resources :note_images
+    resources :pages
+  end
   
   root :to => "static_pages#home"
 

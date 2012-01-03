@@ -2,7 +2,8 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    #@pages = Page.all
+    @pages = Note.find(params[:note_id]).pages.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,8 @@ class PagesController < ApplicationController
   # GET /pages/new
   # GET /pages/new.json
   def new
-    @page = Page.new
+    #@page = Page.new
+    @page = Note.find(params[:note_id]).pages.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +46,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to [@page.note, @page], notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to [@page.note, @page], notice: 'Page was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,7 +78,7 @@ class PagesController < ApplicationController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to pages_url }
+      format.html { redirect_to note_pages_url(params[:note_id]) }
       format.json { head :ok }
     end
   end

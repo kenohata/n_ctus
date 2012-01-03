@@ -17,13 +17,13 @@
     <td><%= page.user_id %></td>
     <td><%= page.content %></td>
     <td><%= page.attachment %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [page.note, page] %></td>
+    <td><%= link_to 'Edit', edit_note_page_path(page.note, page) %></td>
+    <td><%= link_to 'Destroy', [page.note, page], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Page', new_page_path %>
+<%= link_to 'New Page', new_note_page_path %>

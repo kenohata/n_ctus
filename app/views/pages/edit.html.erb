@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @page %> |
-<%= link_to 'Back', pages_path %>
+<%= link_to 'Show', [@page.note, @page] %> |
+<%= link_to 'Back', note_pages_path(@page.note) %>

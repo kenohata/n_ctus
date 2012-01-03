@@ -15,13 +15,13 @@
     <td><%= comment.user_id %></td>
     <td><%= comment.micropost_id %></td>
     <td><%= comment.content %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [comment.micropost, comment] %></td>
+    <td><%= link_to 'Edit', edit_micropost_comment_path(comment.micropost, comment) %></td>
+    <td><%= link_to 'Destroy', [comment.micropost, comment], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'New Comment', new_micropost_comment_path(params[:micropost_id]) %>
