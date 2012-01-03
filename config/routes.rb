@@ -1,4 +1,20 @@
 Connectus::Application.routes.draw do
+  resources :readings
+
+  resources :profiles
+
+  resources :note_images
+
+  resources :direct_massages
+
+  resources :comments
+
+  resources :microposts
+
+  resources :pages
+
+  resources :notes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

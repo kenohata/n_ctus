@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>To:</b>
+  <%= @direct_massage.to_id %>
+</p>
+
+<p>
+  <b>From:</b>
+  <%= @direct_massage.from_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @direct_massage.content %>
+</p>
+
+<p>
+  <b>Unread:</b>
+  <%= @direct_massage.unread %>
+</p>
+
+
+<%= link_to 'Edit', edit_direct_massage_path(@direct_massage) %> |
+<%= link_to 'Back', direct_massages_path %>

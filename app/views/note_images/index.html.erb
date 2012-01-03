@@ -1,0 +1,27 @@
+<h1>Listing note_images</h1>
+
+<table>
+  <tr>
+    <th>Note</th>
+    <th>Title</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @note_images.each do |note_image| %>
+  <tr>
+    <td><%= note_image.note_id %></td>
+    <td><%= note_image.title %></td>
+    <td><%= note_image.image %></td>
+    <td><%= link_to 'Show', note_image %></td>
+    <td><%= link_to 'Edit', edit_note_image_path(note_image) %></td>
+    <td><%= link_to 'Destroy', note_image, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Note image', new_note_image_path %>
