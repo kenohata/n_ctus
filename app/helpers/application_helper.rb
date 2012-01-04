@@ -12,9 +12,9 @@ module ApplicationHelper
 
   def avatar_image_thumb(user)
     if user.profile.avatar.to_s == nil
-      link_to(image_tag("avatar_thumb.png"), user_profile_path(user.profile))
+      link_to(image_tag("avatar_thumb.png"), user_profile_path(user))
     else
-      link_to(image_tag(user.profile.avatar_url(:thumb).to_s), user_profile_path(user.profile))
+      link_to(image_tag(user.profile.avatar_url(:thumb).to_s), user_profile_path(user))
     end
   end
   

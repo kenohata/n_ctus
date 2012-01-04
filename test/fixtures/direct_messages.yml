@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  to_id: 1
   from_id: 1
-  content: MyText
-  unread: false
+  to_id: 3
+  content: はじめましてさいわきさん。こんどいっしょにカナルでカレーでも食べましょう。
 
 two:
+  from_id:3
   to_id: 1
-  from_id: 1
-  content: MyText
-  unread: false
+  content: いいですよ。おまちしております。

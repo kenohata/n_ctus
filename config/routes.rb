@@ -5,6 +5,7 @@ Connectus::Application.routes.draw do
   resources :users do
     get "profiles", :on => :collection, :controller => "profiles", :action => "index"
     resource :profile
+    resources :readings
   end
 
   resources :microposts do
@@ -12,17 +13,16 @@ Connectus::Application.routes.draw do
   end
 
   resources :notes do
-    resources :note_images
+    get "images", :action => :images, :on => :collection
+    resources :note_images 
     resources :pages
   end
 
   resources :direct_messages
   
-  resources :readings
-  
   get "campus" => "static_pages#campus"
   get "reading" => "static_pages#reading"
-  
+    
   root :to => "static_pages#campus"
 
   # The priority is based upon order of creation:

@@ -80,4 +80,8 @@ class NotesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def images
+      @images = NoteImage.all
+  end
 end
