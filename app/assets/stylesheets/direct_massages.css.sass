@@ -1,0 +1,30 @@
+// Place all the styles related to the DirectMassages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "application"
+
+table.inbox
+	border-color: $primary_color
+	border-width: 1px
+	border-collapse: collapse
+	empty-cells: show
+	
+	thead
+		tr
+			height: 30px
+			th
+				border-right: 1px solid #663300
+				border-bottom: 1px solid #663300
+			th.unread
+				width: 30px
+			th.from 
+				width: 50px
+				padding: 0 auto
+			th.dm_content
+				width: 400px
+	tbody
+		tr:nth-child(even)
+			background-color: lighten($primary_color, 60)
+		tr:nth-child(odd)
+			background-color: lighten($primary_color, 40)

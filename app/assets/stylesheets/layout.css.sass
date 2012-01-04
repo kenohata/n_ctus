@@ -1,0 +1,48 @@
+$container_width : 980px
+$sidebar_width : 180px
+$local_main_width : 400px
+
+html
+	height: 100%
+	padding: 0
+
+body
+	background-color: #fff
+	height: 100%
+	padding: 0
+	margin: 0
+
+#wrapper
+	min-height: 100%
+	height: auto !important
+	height: 100%
+	margin: 0 auto 60px
+
+.container 
+	width: $container_width
+	margin: 0px auto
+	padding-top: 10px
+	//padding-bottom: 50px
+
+#header
+	height: 40px
+
+#body
+	.container
+		padding-top: 10px
+		background-color: white
+
+.content
+	width: $container_width - $sidebar_width
+	float: right
+	margin: 0px
+
+
+#left-sidebar
+	width: $sidebar_width
+	float: left
+
+#footer
+	background-color: #888
+	height: 60px
+	margin-top: -60px

@@ -1,0 +1,23 @@
+//=require_tree .
+
+$primary_color: #33AE00
+$sub_color: lighten(blue,50)
+$font_color: #555
+
+body
+	color: $font_color
+	
+	a
+		text-decoration: none
+		
+		&:visited,&:active,&:link
+			color: $primary_color
+		
+		&:hover
+			color: $font_color
+		
+	a:hover
+		color: #0f0
+
+	#wrapper
+		background-color: $sub_color
