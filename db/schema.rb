@@ -11,12 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120103152619) do
+ActiveRecord::Schema.define(:version => 20120104035031) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "micropost_id"
     t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "direct_messages", :force => true do |t|
+    t.integer  "to_id"
+    t.integer  "from_id"
+    t.text     "content"
+    t.boolean  "unread"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
