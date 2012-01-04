@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120103152619) do
     t.datetime "updated_at"
   end
 
-  create_table "direct_massages", :force => true do |t|
+  create_table "direct_messages", :force => true do |t|
     t.integer  "to_id"
     t.integer  "from_id"
     t.text     "content"

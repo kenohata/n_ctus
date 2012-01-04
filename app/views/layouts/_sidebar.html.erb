@@ -1,0 +1,15 @@
+<div id="sidebar">
+	<%= link_to "#{current_user.profile.name}",profile_path(current_user) %><br/>
+	<%= avatar_image_thumb current_user %><br />
+
+<h3>Boards</h3>
+<ol id="boards_menu">
+	<li class="<%= li_point("campus") %>"><%= link_to "Campus","/boards/campus" %>
+	<li class="<%= li_point("reading") %>"><%= link_to "Reading","/boards/reading" %>
+	<li><%= link_to "Read users", readings_path %>
+	<li><%= link_to "Users", profiles_path %>
+	<li><%= link_to "Notes", notes_path %>
+	<li><%= link_to "Note images", note_images_path %>
+</ol>
+
+</div>

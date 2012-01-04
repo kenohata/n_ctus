@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_one :profile
+  has_many :direct_messages
   
   before_validation :student_number_to_email
   after_create :generate_profile

@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>connectus</h1>
+	<ul>
+		<li><%= link_to "Home", root_path %>
+		<% if user_signed_in? %>
+			<li><%= link_to "Inbox (#{current_user.direct_messages.find_all_by_unread(true).count})", direct_massages_path %>
+			<li><%= link_to "Profile", user_profile_path(current_user) %>
+			<li><%= link_to "Settings", edit_user_registration_path %>
+			<li><%= link_to "Sign out", destroy_user_session_path , method: :delete %>
+		<% else %>
+			<li><%= link_to "Sign in", new_user_session_path %>
+			<li><%= link_to "Sign up", new_user_registration_path %>
+		<% end %>
+	</ul>
+</div>
