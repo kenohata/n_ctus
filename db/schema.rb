@@ -21,15 +21,6 @@ ActiveRecord::Schema.define(:version => 20120103152619) do
     t.datetime "updated_at"
   end
 
-  create_table "direct_messages", :force => true do |t|
-    t.integer  "to_id"
-    t.integer  "from_id"
-    t.text     "content"
-    t.boolean  "unread"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "microposts", :force => true do |t|
     t.integer  "user_id"
     t.string   "content"

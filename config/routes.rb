@@ -1,5 +1,7 @@
 Connectus::Application.routes.draw do
   
+  resources :direct_messages
+
   devise_for :users
 
   resources :users do
@@ -7,8 +9,6 @@ Connectus::Application.routes.draw do
   end
 
   resources :readings
-
-  resources :direct_massages
 
   resources :microposts do
     resources :comments

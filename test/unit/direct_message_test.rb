@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DirectMassageTest < ActiveSupport::TestCase
+class DirectMessageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

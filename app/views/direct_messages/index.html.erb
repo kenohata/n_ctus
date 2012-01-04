@@ -1,0 +1,29 @@
+<h1>Listing direct_messages</h1>
+
+<table>
+  <tr>
+    <th>To</th>
+    <th>From</th>
+    <th>Content</th>
+    <th>Unread</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @direct_messages.each do |direct_message| %>
+  <tr>
+    <td><%= direct_message.to_id %></td>
+    <td><%= direct_message.from_id %></td>
+    <td><%= direct_message.content %></td>
+    <td><%= direct_message.unread %></td>
+    <td><%= link_to 'Show', direct_message %></td>
+    <td><%= link_to 'Edit', edit_direct_message_path(direct_message) %></td>
+    <td><%= link_to 'Destroy', direct_message, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Direct message', new_direct_message_path %>

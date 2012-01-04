@@ -1,10 +1,10 @@
-<%= form_for(@direct_massage) do |f| %>
-  <% if @direct_massage.errors.any? %>
+<%= form_for(@direct_message) do |f| %>
+  <% if @direct_message.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@direct_massage.errors.count, "error") %> prohibited this direct_massage from being saved:</h2>
+      <h2><%= pluralize(@direct_message.errors.count, "error") %> prohibited this direct_message from being saved:</h2>
 
       <ul>
-      <% @direct_massage.errors.full_messages.each do |msg| %>
+      <% @direct_message.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
