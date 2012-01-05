@@ -1,6 +1,9 @@
-<h1>StaticPages#campus</h1>
-<p>Find me in app/views/static_pages/campus.html.erb</p>
+<%= form_for([@micropost.user, @micropost]) do |f| -%>
+  <%= f.text_area :content, size: "60x4<" %><br />
+  <%= f.submit :submit %>
+<% end -%>
 
+<hr />
 <ul>
 <% @microposts.each do |f| %>
 	<li><%= f.content %>

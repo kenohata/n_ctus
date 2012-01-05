@@ -2,7 +2,8 @@ class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
   def index
-    @microposts = Micropost.all
+    # @microposts = Micropost.all
+    @microposts = User.find(params[:user_id]).microposts
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,11 +41,13 @@ class MicropostsController < ApplicationController
   # POST /microposts
   # POST /microposts.json
   def create
-    @micropost = Micropost.new(params[:micropost])
+    # @micropost = Micropost.new(params[:micropost])
+    @micropost = current_user.microposts.build(params[:micropost])
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
+        # format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
+        format.html { redirect_to campus_path }
         format.json { render json: @micropost, status: :created, location: @micropost }
       else
         format.html { render action: "new" }
@@ -60,7 +63,8 @@ class MicropostsController < ApplicationController
 
     respond_to do |format|
       if @micropost.update_attributes(params[:micropost])
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully updated.' }
+        # format.html { redirect_to @micropost, notice: 'Micropost was successfully updated.' }
+        format.html { redirect_to campus_path }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :direct_messages
   has_many :readings
-  # has_many :
+  has_many :microposts
   
   before_validation :student_number_to_email
   after_create :generate_profile
