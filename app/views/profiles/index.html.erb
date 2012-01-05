@@ -2,24 +2,18 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Name</th>
-    <th>Grade</th>
     <th>Avatar</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+	<th>Department</th>
+    <th>Grade</th>
   </tr>
 
 <% @profiles.each do |profile| %>
-  <tr>
-    <td><%= profile.user_id %></td>
+  <tr>	
+  	<td><%= avatar_image_thumb profile.user %></td>
     <td><%= link_to profile.name, user_profile_path(profile.user) %></td>
+	<td><%= profile.user.department %></td>
     <td><%= profile.grade %></td>
-    <td><%= profile.avatar %></td>
-    <td><%= link_to 'Show', user_profile_path(profile) %></td>
-    <td><%= link_to 'Edit', edit_user_profile_path(profile) %></td>
-    <td><%= link_to 'Destroy', user_profile_path(profile), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

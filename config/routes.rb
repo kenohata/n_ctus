@@ -4,7 +4,7 @@ Connectus::Application.routes.draw do
 
   resources :users do
     get "profiles", :on => :collection, :controller => "profiles", :action => "index"
-    resource :profile, except: [:new, :destroy] do
+    resource :profile, except: [:new, :create, :destroy] do
       get "detail"
     end
     resources :readings, only: [:index, :create, :destroy]
