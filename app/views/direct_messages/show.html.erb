@@ -20,6 +20,4 @@
   <%= @direct_message.unread %>
 </p>
 
-
-<%= link_to 'Edit', edit_direct_message_path(@direct_message) %> |
-<%= link_to 'Back', direct_messages_path %>
+<%= link_to 'Back', user_direct_messages_path(current_user) %>

@@ -11,6 +11,7 @@ Connectus::Application.routes.draw do
     resources :microposts, only: [:index, :create, :destroy] do
       resources :comments, only: [:new, :create, :destroy]
     end
+    resources :direct_messages, except: [:edit]
   end
 
   resources :notes do
@@ -18,8 +19,6 @@ Connectus::Application.routes.draw do
     resources :note_images 
     resources :pages
   end
-
-  resources :direct_messages
   
   get "campus" => "static_pages#campus"
   get "reading" => "static_pages#reading"

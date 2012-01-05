@@ -2,7 +2,8 @@ class DirectMessagesController < ApplicationController
   # GET /direct_messages
   # GET /direct_messages.json
   def index
-    @direct_messages = DirectMessage.all
+    # @direct_messages = DirectMessage.all
+    @direct_messages = current_user.direct_messages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,8 @@ class DirectMessagesController < ApplicationController
   # GET /direct_messages/new
   # GET /direct_messages/new.json
   def new
-    @direct_message = DirectMessage.new
+    # @direct_message = DirectMessage.new
+    @direct_message = User.find(params[:user_id]).direct_messages.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,17 +42,20 @@ class DirectMessagesController < ApplicationController
   # POST /direct_messages
   # POST /direct_messages.json
   def create
-    @direct_message = DirectMessage.new(params[:direct_message])
+    # @direct_message = DirectMessage.new(params[:direct_message])
+    @direct_message = User.find(params[:user_id]).direct_messages.build(params[:direct_message])
+    @direct_message.from_id = current_user.id
+    @direct_message.unread = true
 
     respond_to do |format|
-      if @direct_message.save
-        format.html { redirect_to @direct_message, notice: 'Direct message was successfully created.' }
-        format.json { render json: @direct_message, status: :created, location: @direct_message }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @direct_message.errors, status: :unprocessable_entity }
+        if @direct_message.save
+          format.html { redirect_to user_profile_path(@direct_message.to_user), notice: 'Direct message was successfully sent.' }
+          format.json { render json: @direct_message, status: :created, location: @direct_message }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @direct_message.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PUT /direct_messages/1
@@ -76,7 +81,7 @@ class DirectMessagesController < ApplicationController
     @direct_message.destroy
 
     respond_to do |format|
-      format.html { redirect_to direct_messages_url }
+      format.html { redirect_to user_direct_messages_url(current_user) }
       format.json { head :ok }
     end
   end

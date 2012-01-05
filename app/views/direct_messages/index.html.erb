@@ -17,13 +17,8 @@
     <td><%= direct_message.from_id %></td>
     <td><%= direct_message.content %></td>
     <td><%= direct_message.unread %></td>
-    <td><%= link_to 'Show', direct_message %></td>
-    <td><%= link_to 'Edit', edit_direct_message_path(direct_message) %></td>
-    <td><%= link_to 'Destroy', direct_message, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', user_direct_message_path(current_user, direct_message) %></td>
+    <td><%= link_to 'Destroy', user_direct_message_path(current_user, direct_message), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Direct message', new_direct_message_path %>

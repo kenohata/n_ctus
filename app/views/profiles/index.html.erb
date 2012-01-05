@@ -14,7 +14,7 @@
 <% @profiles.each do |profile| %>
   <tr>
     <td><%= profile.user_id %></td>
-    <td><%= profile.name %></td>
+    <td><%= link_to profile.name, user_profile_path(profile.user) %></td>
     <td><%= profile.grade %></td>
     <td><%= profile.avatar %></td>
     <td><%= link_to 'Show', user_profile_path(profile) %></td>

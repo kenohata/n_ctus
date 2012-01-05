@@ -1,7 +1,9 @@
 <h2><%= @profile.name %>'s profile</h2>
 <div id="profile-sidebar">
 	<%= link_to(image_tag(@profile.avatar_url(:thumb).to_s),@profile.avatar.to_s) %><hr />
-	<%= link_to "send message", new_direct_message_path, class: "button" %><br />
+	<% if @profile.user.id != current_user.id %>
+		<%= link_to "send message", new_user_direct_message_path(@profile.user), class: "button" %><br />
+	<% end %>
 	<%= link_to "show detail", detail_user_profile_path(@profile.user), class: "button" %><br />
 	<%= link_to "edit profile", edit_user_profile_path(@profile), class: "button" %><br />
 </div>

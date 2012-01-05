@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :microposts
   has_many :comments
-  has_many :direct_messages
+  has_many :direct_messages, foreign_key: "to_id"
   has_many :readings
   has_many :reading_users, class_name: "User", through: :readings
   

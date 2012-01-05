@@ -1,4 +1,4 @@
-<%= form_for(@direct_message) do |f| %>
+<%= form_for([@direct_message.to_user, @direct_message]) do |f| %>
   <% if @direct_message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@direct_message.errors.count, "error") %> prohibited this direct_message from being saved:</h2>
