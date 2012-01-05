@@ -1,22 +1,17 @@
 $container_width : 980px
 $sidebar_width : 180px
 $local_main_width : 400px
+$footer_height: 60px
 
 html
 	height: 100%
 	padding: 0
 
 body
-	background-color: #fff
 	height: 100%
-	padding: 0
-	margin: 0
 
 #wrapper
 	min-height: 100%
-	height: auto !important
-	height: 100%
-	margin: 0 auto 60px
 
 .container 
 	width: $container_width
@@ -32,6 +27,11 @@ body
 		padding-top: 10px
 		background-color: white
 
+#main
+	overflow: auto
+	padding-bottom: $footer_height
+	
+
 .content
 	width: $container_width - $sidebar_width
 	float: right
@@ -44,5 +44,7 @@ body
 
 #footer
 	background-color: #888
-	height: 60px
-	margin-top: -60px
+	height: $footer_height
+	position: relative
+	margin-top: -$footer_height
+	clear: both

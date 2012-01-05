@@ -12,20 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :to_id %><br />
-    <%= f.number_field :to_id %>
-  </div>
-  <div class="field">
-    <%= f.label :from_id %><br />
-    <%= f.number_field :from_id %>
-  </div>
-  <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :unread %><br />
-    <%= f.check_box :unread %>
+    <%= f.text_area :content, size: "80x6" %>
   </div>
   <div class="actions">
     <%= f.submit %>

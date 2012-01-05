@@ -11,13 +11,13 @@ Connectus::Application.routes.draw do
     resources :microposts, only: [:index, :create, :destroy] do
       resources :comments, only: [:new, :create, :destroy]
     end
-    resources :direct_messages, except: [:edit]
+    resources :direct_messages, except: [:edit, :update]
   end
 
   resources :notes do
     get "images", :action => :images, :on => :collection
-    resources :note_images 
-    resources :pages
+    resources :note_images, except: [:index, :update]
+    resources :pages, except: [:index, :new]
   end
   
   get "campus" => "static_pages#campus"

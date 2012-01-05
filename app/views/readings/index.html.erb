@@ -1,8 +1,7 @@
-<h1>Listing readings</h1>
+<h1>Users you're reading</h1>
 
 <table>
   <tr>
-    <th>User</th>
     <th>Readed</th>
     <th></th>
     <th></th>
@@ -11,7 +10,6 @@
 
 <% @readings.each do |reading| %>
   <tr>
-    <td><%= reading.user_id %></td>
     <td><%= reading.readed_id %></td>
     <td><%= link_to 'Destroy', user_reading_path(reading.user, reading), confirm: 'Are you sure?', method: :delete %></td>
   </tr>

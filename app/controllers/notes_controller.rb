@@ -14,6 +14,9 @@ class NotesController < ApplicationController
   # GET /notes/1.json
   def show
     @note = Note.find(params[:id])
+    @page = @note.pages.build
+    @pages = Page.find_all_by_note_id(params[:id])
+    # @pages = @note.pages
 
     respond_to do |format|
       format.html # show.html.erb

@@ -40,11 +40,12 @@ class NoteImagesController < ApplicationController
   # POST /note_images
   # POST /note_images.json
   def create
-    @note_image = NoteImage.new(params[:note_image])
-
+    # @note_image = NoteImage.new(params[:note_image])
+    @note_image = Note.find(params[:note_id]).note_images.build(params[:note_image])
+    
     respond_to do |format|
       if @note_image.save
-        format.html { redirect_to [@note_image.note, @note_image], notice: 'Note image was successfully created.' }
+        format.html { redirect_to @note_image.note, notice: 'Note image was successfully created.' }
         format.json { render json: @note_image, status: :created, location: @note_image }
       else
         format.html { render action: "new" }

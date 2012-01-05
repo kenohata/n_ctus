@@ -1,5 +1,5 @@
 here is notes#images
 <br/>
 <% @images.each do |f| %>
-	<%= f.title %><br />
+	<%= image_tag f.image_url(:thumb).to_s %><br />
 <% end %>

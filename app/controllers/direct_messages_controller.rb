@@ -15,6 +15,7 @@ class DirectMessagesController < ApplicationController
   # GET /direct_messages/1.json
   def show
     @direct_message = DirectMessage.find(params[:id])
+    @direct_message.update_attribute(:unread, false)
 
     respond_to do |format|
       format.html # show.html.erb

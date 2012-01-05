@@ -18,6 +18,15 @@ module ApplicationHelper
     end
   end
   
+  def avatar_image_middle(user)
+    if user.profile.avatar_url(:middle).to_s == nil
+      link_to(image_tag("avatar_thumb.png"), user_profile_path(user))
+    else
+      link_to(image_tag(user.profile.avatar_url(:middle).to_s),
+      user_profile_path(user), target: "blank")
+    end
+  end
+  
   def li_point(name)
     if params[:controller] == "boards"
       if name == params[:action]

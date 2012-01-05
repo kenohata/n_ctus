@@ -1,0 +1,15 @@
+<%= div_for(page) do %>
+	<div class="page-header">
+		<%= avatar_image_thumb(page.user) %>
+		<%= link_to "post id: #{page.id}", note_page_path(page.note, page) %> | 
+		<%= page.user.profile.name %>
+	</div>
+	<div class="page-body">
+		<%= simple_format escape_once page.content %>
+	</div>
+	<div class="page-footer">
+		<%= link_to page.created_at, note_page_path(page.note, page) %> | 
+		<%= link_to "edit", edit_note_page_path(page.note, page) %> | 
+		<%= link_to "delete", note_page_path(page.note, page), method: :delete, confirm: "Are you sure ?" %>
+	</div>
+<% end %>

@@ -2,18 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "application.css.sass"
+
 .micropost
-	.micropost_profile
+	margin: 10px auto
+	
+	.micropost-profile
 		float: left
 		width: 100px
 		height: 75px
 		margin-left: 10px
 		padding: 1px
 		
-	.micropost_body
-		float: left
-		margin: 0
+	.micropost-header
+		font-size: $smaller_font_size
+		
+	.micropost-body
+		margin: 10px auto
 		padding 5px
 		
 	.comments-wrapper
 		padding-left: 30px
+	
+	.micropost-footer
+		font-size: $smaller_font_size

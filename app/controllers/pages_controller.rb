@@ -42,11 +42,13 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(params[:page])
+    # @page = Page.new(params[:page])
+    @page = Note.find(params[:note_id]).pages.build(params[:page])
+    @page.user_id = current_user.id
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to [@page.note, @page], notice: 'Page was successfully created.' }
+        format.html { redirect_to @page.note, notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
         format.html { render action: "new" }

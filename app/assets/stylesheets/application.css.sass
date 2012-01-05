@@ -3,6 +3,8 @@
 $primary_color: #33AE00
 $sub_color: lighten(blue,50)
 $font_color: #555
+$normal_font_size: 16px
+$smaller_font_size: 12px
 
 body
 	color: $font_color
@@ -17,10 +19,7 @@ body
 			color: $font_color
 		
 	a:hover
-		color: #0f0
-
-	#wrapper
-		background-color: $sub_color
+		color: #0f0		
 	
 	.clearfix:after 
 		content: "."
@@ -32,4 +31,9 @@ body
 
 	.clearfix 
 		min-height: 1px
-	
+
+table
+	tr:nth-child(odd)
+		background-color: lighten($primary_color, 55)
+	tr:nth-child(even)
+		background-color: lighten($primary_color, 45)

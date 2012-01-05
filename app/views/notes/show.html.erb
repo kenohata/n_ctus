@@ -1,12 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @note.title %></h1>
 
-<p>
-  <b>Title:</b>
-  <%= @note.title %>
-</p>
+<% @note.note_images.each do |f| %>
+	<%= image_tag f.image_url(:thumb).to_s %>
+<% end %><br />
+<%= link_to "New Note Image", new_note_note_image_path(@note) %>
+<hr>
 
+<%= render partial: @pages %>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Show pages', note_pages_path(@note) %> |
-<%= link_to 'Show note_images', note_note_images_path(@note) %> |
+<%= form_for [@page.note, @page] do |f| -%>
+	<%= f.text_area :content, size: "80x5" %><br />
+	<%= f.submit :submit %>
+<% end -%>
+
+<hr />
+
+<%= link_to 'Edit', edit_note_path(@note) %> | 
 <%= link_to 'Back', notes_path %>

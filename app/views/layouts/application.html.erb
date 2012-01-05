@@ -11,18 +11,17 @@
 		<div id="header">
 			<%= render :partial  => "layouts/header" %>
 		</div>
-		<div class="container">
+		<div id="main" class="container">
 			<div id="left-sidebar">
 				<% if user_signed_in? %>
 					<%= render :partial => "layouts/sidebar" %>
 				<% end %>
 			</div>
-			<div class="content">
+			<div class="content clearfix">
 				<p class="devise-notice"><%= notice %></p>
 				<p class="devise-alert"><%= alert %></p>
 					<%= yield %>
 			</div>
-			<hr style="clear:both;" />
 		</div>
 	</div>
 	<div id="footer">

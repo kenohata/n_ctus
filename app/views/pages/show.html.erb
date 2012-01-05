@@ -1,24 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Note:</b>
-  <%= @page.note_id %>
-</p>
+<h1>a</h1>
 
-<p>
-  <b>User:</b>
-  <%= @page.user_id %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @page.content %>
-</p>
-
-<p>
-  <b>Attachment:</b>
-  <%= @page.attachment %>
-</p>
+<%= render partial: @page %>
 
 
 <%= link_to 'Edit', edit_note_page_path(@page.note, @page) %> |

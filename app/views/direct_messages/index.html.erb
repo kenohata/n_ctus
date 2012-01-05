@@ -1,24 +1,21 @@
-<h1>Listing direct_messages</h1>
+<h1>Listing direct messages</h1>
 
 <table>
-  <tr>
-    <th>To</th>
+  <tr>	
+    <th>Unread</th>
     <th>From</th>
     <th>Content</th>
-    <th>Unread</th>
     <th></th>
-    <th></th>
-    <th></th>
+    <th></th>	
   </tr>
 
-<% @direct_messages.each do |direct_message| %>
-  <tr>
-    <td><%= direct_message.to_id %></td>
-    <td><%= direct_message.from_id %></td>
-    <td><%= direct_message.content %></td>
-    <td><%= direct_message.unread %></td>
-    <td><%= link_to 'Show', user_direct_message_path(current_user, direct_message) %></td>
-    <td><%= link_to 'Destroy', user_direct_message_path(current_user, direct_message), confirm: 'Are you sure?', method: :delete %></td>
+<% @direct_messages.each do |dm| %>
+  <tr>	
+  	<td><%= dm.unread %></td>
+    <td><%= link_to dm.from_user.profile.name, user_profile_path(dm.from_user) %></td>
+    <td><%= dm.content[0,15] %><%= "..." if dm.content.length > 15 %></td>
+	<td><%= link_to "Read more", user_direct_message_path(current_user, dm) %></td>
+    <td><%= link_to 'Destroy', user_direct_message_path(current_user, dm), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

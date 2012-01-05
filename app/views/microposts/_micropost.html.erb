@@ -1,17 +1,19 @@
-<div class="micropost">
-	<div class="micropost_profile">
+<%= div_for(micropost) do %>
+	<div class="micropost-profile">
 		<%= avatar_image_thumb micropost.user %>
 	</div>
-	<div class="micropost_body">
-		<div class="micropost_header">
-			<%= link_to micropost.user.profile.name, user_profile_path(micropost.user, micropost) %>
-				<%= read_or_unread(micropost.user) %>
+	<div class="micropost-content clearfix">
+		<div class="micropost-header">
+			<%= link_to micropost.user.profile.name, user_profile_path(micropost.user) %>
+			<%= read_or_unread(micropost.user) %>
 		</div>
-		<%= micropost.content %>
+		<div class="micropost-body">
+			<%= micropost.content %>
+		</div>
 		<div class="comments-wrapper">
 			<%= render micropost.comments %>
 		</div>
-		<div class="micropost_footer">
+		<div class="micropost-footer">
 			<%= link_to "comment", new_user_micropost_comment_path(micropost.user,
 			micropost) %>
 			<% if micropost.user == current_user %>
@@ -19,5 +21,4 @@
 			<% end %>
 		</div>
 	</div>
-	<hr style="clear:both;">
-</div>
+<% end %>
