@@ -1,2 +1,8 @@
 <h1>StaticPages#campus</h1>
 <p>Find me in app/views/static_pages/campus.html.erb</p>
+
+<ul>
+<% @microposts.each do |f| %>
+	<li><%= f.content %>
+<% end %>
+</ul>

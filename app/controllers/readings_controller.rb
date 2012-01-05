@@ -2,7 +2,8 @@ class ReadingsController < ApplicationController
   # GET /readings
   # GET /readings.json
   def index
-    @readings = Reading.all
+    # @readings = Reading.all
+    @readings = User.find(params[:user_id]).readings
 
     respond_to do |format|
       format.html # index.html.erb

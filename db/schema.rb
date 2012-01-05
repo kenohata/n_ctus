@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "name"
     t.integer  "grade"
     t.string   "avatar"
+    t.string   "url"
+    t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

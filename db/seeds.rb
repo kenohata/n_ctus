@@ -8,16 +8,19 @@
 
 
 u=User.new(
+  :id => 1,
   :email => "j6210025@ed.tus.ac.jp",
   :password => "rikadai"
 ).confirm!
 
 u=User.new(
+  :id => 2,
   :email => "j7310041@ed.tus.ac.jp",
   :password => "rikadai"
 ).confirm!
 
 u=User.new(
+  :id => 3,
   :email => "j7310059@ed.tus.ac.jp",
   :password => "rikadai"
 ).confirm!

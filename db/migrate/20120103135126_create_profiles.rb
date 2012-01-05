@@ -5,6 +5,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :name
       t.integer :grade
       t.string :avatar
+      t.string :url
+      t.text :bio
 
       t.timestamps
     end
