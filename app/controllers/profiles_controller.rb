@@ -82,4 +82,8 @@ class ProfilesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def detail
+    
+  end
 end

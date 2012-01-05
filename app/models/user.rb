@@ -31,4 +31,19 @@ class User < ActiveRecord::Base
     self.email = self.email[1,7]
   end
   
+  def student_number
+    self.email[1,7]
+  end
+  
+  def department
+    case student_number.to_s[0,2].to_i
+      when 62
+        "PH"
+      when 73
+        "EE"
+      else
+        "none"
+    end
+  end
+  
 end

@@ -1,34 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @profile.user_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @profile.name %>
-</p>
-
-<p>
-  <b>Grade:</b>
-  <%= @profile.grade %>
-</p>
-
-<p>
-  <b>Avatar:</b>
-  <%= @profile.avatar %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <b>URL:</b>
-  <%= @profile.url %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_profile_path(@profile) %>
+<h2><%= @profile.name %>'s profile</h2>
+<div id="profile-sidebar">
+	<%= link_to(image_tag(@profile.avatar_url(:thumb).to_s),@profile.avatar.to_s) %><hr />
+	<%= link_to "send message", new_direct_message_path, class: "button" %><br />
+	<%= link_to "show detail", detail_user_profile_path(@profile.user), class: "button" %><br />
+	<%= link_to "edit profile", edit_user_profile_path(@profile), class: "button" %><br />
+</div>
+<div id="profile-content">
+	<h3><%= @profile.user.student_number %> - <%= @profile.name %></h3>
+	<span style="color:#666;display:block;">
+		<%= @profile.user.department %>/
+		<%= @profile.grade %>th grade
+	</span>
+	<div id="profile-bio">
+		<%=	simple_format @profile.bio %>
+	</div>
+</div>

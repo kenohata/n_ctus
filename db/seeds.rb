@@ -19,7 +19,8 @@ User.find(1).profile.update_attributes  id: 1,
   name: "ハタケン(大畠 健)",
   grade: 2,
    url: "http://planforgrowth.org/",
-  bio: "コンピューターはじめました。"
+  bio: "コンピューターはじめました。\nみなさんよろしくおねがいします。
+Ruby/Ruby on Rails/Ubuntu/Linux/C++/Python/"
 
 u=User.new(
   :id => 2,
