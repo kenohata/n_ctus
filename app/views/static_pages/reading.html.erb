@@ -1,6 +1,1 @@
-<h1>StaticPages#reading</h1>
-<p>Find me in app/views/static_pages/reading.html.erb</p>
-
-<% @microposts.each do |f| %>
-	<%= f.content %><br />
-<% end %>
+<%= render partial: @microposts %>

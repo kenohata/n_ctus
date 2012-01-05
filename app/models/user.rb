@@ -9,10 +9,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_one :profile
+  has_many :microposts
+  has_many :comments
   has_many :direct_messages
   has_many :readings
   has_many :reading_users, class_name: "User", through: :readings
-  has_many :microposts
   
   before_validation :student_number_to_email
   after_create :generate_profile

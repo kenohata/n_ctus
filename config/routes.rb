@@ -7,7 +7,7 @@ Connectus::Application.routes.draw do
     resource :profile, except: [:new, :destroy]
     resources :readings, only: [:index, :create, :destroy]
     resources :microposts, only: [:index, :create, :destroy] do
-      resources :comments
+      resources :comments, only: [:new, :create, :destroy]
     end
   end
 

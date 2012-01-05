@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', micropost_comments_path(params[:micropost_id]) %>
+<%= link_to 'Back', user_micropost_comments_path(params[:user_id], params[:micropost_id]) %>

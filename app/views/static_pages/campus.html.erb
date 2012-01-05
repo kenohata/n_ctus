@@ -4,8 +4,4 @@
 <% end -%>
 
 <hr />
-<ul>
-<% @microposts.each do |f| %>
-	<li><%= f.content %> | <%= read_or_unread(f.user) %>
-<% end %>
-</ul>
+<%= render partial: @microposts %>

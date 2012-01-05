@@ -16,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_micropost_comment_path(@comment.micropost, @comment) %> |
-<%= link_to 'Back', micropost_comments_path(params[:micropost_id]) %>
+<%= link_to 'Edit', edit_user_micropost_comment_path(@comment.micropost.user, @comment.micropost, @comment) %> |
+<%= link_to 'Back', user_micropost_comments_path(params[:user_id], params[:micropost_id]) %>

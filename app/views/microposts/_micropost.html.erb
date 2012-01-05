@@ -1,0 +1,23 @@
+<div class="micropost">
+	<div class="micropost_profile">
+		<%= avatar_image_thumb micropost.user %>
+	</div>
+	<div class="micropost_body">
+		<div class="micropost_header">
+			<%= link_to micropost.user.profile.name, user_profile_path(micropost.user, micropost) %>
+				<%= read_or_unread(micropost.user) %>
+		</div>
+		<%= micropost.content %>
+		<div class="comments-wrapper">
+			<%= render micropost.comments %>
+		</div>
+		<div class="micropost_footer">
+			<%= link_to "comment", new_user_micropost_comment_path(micropost.user,
+			micropost) %>
+			<% if micropost.user == current_user %>
+				<%= link_to "delete" , user_micropost_path(micropost.user, micropost), method: :delete %>
+			<% end %>
+		</div>
+	</div>
+	<hr style="clear:both;">
+</div>

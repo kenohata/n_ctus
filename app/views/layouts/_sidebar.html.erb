@@ -2,7 +2,6 @@
 	<%= link_to "#{current_user.profile.name}", user_profile_path(current_user) %><br/>
 	<%= avatar_image_thumb current_user %><br />
 
-<h3>Boards</h3>
 <ol id="boards_menu">
 	<li class="<%= li_point("campus") %>"><%= link_to "Campus", campus_path %>
 	<li class="<%= li_point("reading") %>"><%= link_to "Reading", reading_path %>
