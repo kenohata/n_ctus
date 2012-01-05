@@ -13,10 +13,7 @@
   <tr>
     <td><%= reading.user_id %></td>
     <td><%= reading.readed_id %></td>
-    <td><%= link_to 'Show', user_reading_path(reading.user, reading) %></td>
-    <td><%= link_to 'Edit', edit_user_reading_path(reading.user, reading) %></td>
     <td><%= link_to 'Destroy', user_reading_path(reading.user, reading), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-

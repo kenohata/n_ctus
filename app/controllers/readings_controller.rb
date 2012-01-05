@@ -41,11 +41,12 @@ class ReadingsController < ApplicationController
   # POST /readings
   # POST /readings.json
   def create
-    @reading = Reading.new(params[:reading])
+    # @reading = Reading.new(params[:reading])
+    @reading = current_user.readings.build(readed_id: params[:readed_id])
 
     respond_to do |format|
       if @reading.save
-        format.html { redirect_to @reading, notice: 'Reading was successfully created.' }
+        format.html { redirect_to user_readings_path(current_user), notice: 'Reading was successfully created.' }
         format.json { render json: @reading, status: :created, location: @reading }
       else
         format.html { render action: "new" }
@@ -77,7 +78,7 @@ class ReadingsController < ApplicationController
     @reading.destroy
 
     respond_to do |format|
-      format.html { redirect_to readings_url }
+      format.html { redirect_to user_readings_url(current_user) }
       format.json { head :ok }
     end
   end

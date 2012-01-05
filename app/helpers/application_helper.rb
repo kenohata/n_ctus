@@ -3,9 +3,9 @@ module ApplicationHelper
   def read_or_unread(user)
     if user.id != current_user.id
       if reading = current_user.readings.find_by_readed_id(user.id)
-        link_to "Unfollow", reading, method: :delete
+        link_to "Unfollow", user_reading_path(current_user.id, reading.id), method: :delete
       else
-        link_to "Read!", readings_path(:readed_id => user.id), method: :post
+        link_to "Read!", user_readings_path(current_user, :readed_id => user.id), method: :post
       end
     end
   end

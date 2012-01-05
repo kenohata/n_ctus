@@ -5,7 +5,8 @@ class StaticPagesController < ApplicationController
   end
   
   def reading
-    # @microposts = current_user.readings.microposts
+    # @microposts = current_user.reading_users.map{|i| i.microposts}
+    @microposts = current_user.reading_users.map{|i| i.microposts}[0]
   end
 
 end

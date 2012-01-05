@@ -4,9 +4,9 @@ Connectus::Application.routes.draw do
 
   resources :users do
     get "profiles", :on => :collection, :controller => "profiles", :action => "index"
-    resource :profile
-    resources :readings
-    resources :microposts, only: [:index, :create, :delete] do
+    resource :profile, except: [:new, :destroy]
+    resources :readings, only: [:index, :create, :destroy]
+    resources :microposts, only: [:index, :create, :destroy] do
       resources :comments
     end
   end
