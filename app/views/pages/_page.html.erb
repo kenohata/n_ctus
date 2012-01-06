@@ -1,8 +1,12 @@
 <%= div_for(page) do %>
 	<div class="page-header">
-		<%= avatar_image_thumb(page.user) %>
-		<%= link_to "post id: #{page.id}", note_page_path(page.note, page) %> | 
-		<%= page.user.profile.name %>
+		<div class="avatar-wrap">
+			<%= avatar_image_thumb(page.user) %>
+		</div>
+		<div class="header-content, clearfix">
+			<%= link_to "post id: #{page.id}", note_page_path(page.note, page) %> | 
+			<%= page.user.profile.name %>
+		</div>
 	</div>
 	<div class="page-body">
 		<%= simple_format escape_once page.content %>

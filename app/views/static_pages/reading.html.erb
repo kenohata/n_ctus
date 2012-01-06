@@ -1,1 +1,8 @@
-<%= render partial: @microposts %>
+<% if @microposts == nil %>
+	There is no user you following. <br />
+	watch <%= link_to "campus timeline", campus_path %>.<br />
+	then you can add your friends to here .<br /><br />
+	enjoy !
+<% else %>
+  <%= render partial: @microposts %>
+<% end %>

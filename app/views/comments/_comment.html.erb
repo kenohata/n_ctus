@@ -1,8 +1,8 @@
-<div class="comment">
-	<div class="comment_avatar">
+<%= div_for(comment) do %>
+	<div class="comment-avatar">
 		<%= avatar_image_thumb(comment.user) %>
 	</div>
-	<div class="comment_body clearfix">
-		<%= comment.content %><br />
+	<div class="comment-body, clearfix">
+		<%= comment.content %>
 	</div>
-</div>
+<% end %>

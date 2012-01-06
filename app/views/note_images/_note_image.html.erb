@@ -1,0 +1,3 @@
+<%= link_to "Back to note", note_path(params[:note_id]) %>
+<%= link_to "Open full size", note_image.image_url.to_s %>
+<%= image_tag note_image.image_url.to_s, class: "note-image-full" %>

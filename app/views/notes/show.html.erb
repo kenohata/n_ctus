@@ -1,9 +1,17 @@
 <h1><%= @note.title %></h1>
-
+<span class="smaller">
+teacher: <%= @note.teacher %> / 
+department: <%= @note.department %> / 
+created: <%= @note.created_at.to_s(:short) %> / 
+updated: <%= @note.updated_at.to_s(:short) %>
+</span>
+<div class="note-description">
+	<%= simple_format escape_once @note.description %>
+</div>
 <% @note.note_images.each do |f| %>
-	<%= image_tag f.image_url(:thumb).to_s %>
+	<%= link_to(image_tag(f.image_url(:thumb).to_s), note_note_image_path(@note, f)) %>
 <% end %><br />
-<%= link_to "New Note Image", new_note_note_image_path(@note) %>
+<%= link_to "View all images", note_note_images_path(@note) %>
 <hr>
 
 <%= render partial: @pages %>
@@ -15,5 +23,6 @@
 
 <hr />
 
+<%= link_to "New Note Image", new_note_note_image_path(@note) %> | 
 <%= link_to 'Edit', edit_note_path(@note) %> | 
 <%= link_to 'Back', notes_path %>

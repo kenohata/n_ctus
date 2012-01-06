@@ -1,20 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Note:</b>
-  <%= @note_image.note_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @note_image.title %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @note_image.image %>
-</p>
-
+<%= render partial: @note_image %>
 
 <%= link_to 'Edit', edit_note_note_image_path(@note_image.note, @note_image) %> |
 <%= link_to 'Back', note_note_images_path(@note_image.note) %>

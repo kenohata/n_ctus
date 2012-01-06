@@ -16,7 +16,7 @@ Connectus::Application.routes.draw do
 
   resources :notes do
     get "images", :action => :images, :on => :collection
-    resources :note_images, except: [:index, :update]
+    resources :note_images, except: :update
     resources :pages, except: [:index, :new]
   end
   

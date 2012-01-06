@@ -45,6 +45,7 @@ class PagesController < ApplicationController
     # @page = Page.new(params[:page])
     @page = Note.find(params[:note_id]).pages.build(params[:page])
     @page.user_id = current_user.id
+    @page.note.update_attributes(updated_at: Time.now)
 
     respond_to do |format|
       if @page.save
