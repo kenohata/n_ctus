@@ -3,7 +3,7 @@ Connectus::Application.routes.draw do
   devise_for :users
 
   resources :users do
-    get "profiles", :on => :collection, :controller => "profiles", :action => "index"
+    get "profiles", on: :collection, controller: "profiles", action: "index"
     resource :profile, except: [:new, :create, :destroy] do
       get "detail"
     end
@@ -14,10 +14,11 @@ Connectus::Application.routes.draw do
     resources :direct_messages, except: [:edit, :update]
   end
 
-  resources :notes do
+  resources :notes, constraints: {id: /[0-9]+/} do
     get "images", :action => :images, :on => :collection
-    resources :note_images, except: :update
-    resources :pages, except: [:index, :new]
+    resources :note_images
+    resources :pages, except: [:index, :new]  
+    match ":department(/:grade)" => "notes#listing", constraints: {department: /[A-Z]{2}/, grade: /[1-4]/}, on: :collection
   end
   
   get "campus" => "static_pages#campus"

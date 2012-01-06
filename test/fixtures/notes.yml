@@ -2,7 +2,30 @@
 
 one: 
   id: 1
-  title: 電磁気I
+  title: 電磁気I 前期 期末
   teacher: 元屋
   department: PH
-  description: まぁ出席はちゃんとしたほうがいいと思います。たまに癇癪起こしてめちゃくちゃなことになるし。444が座りづらいのはわかるけど、週1回90分座るだけなんだから我慢しましょう。
+  grade: 1
+  term: latter
+  year: 2010
+  kind: exam
+
+two: 
+  id: 2
+  title: 力学I 前期 期末
+  teacher: 澤渡
+  department: PH
+  grade: 1
+  term: first
+  year: 2010
+  kind: exam
+
+three:
+  id: 3
+  title: 物理学
+  teacher: 澤渡
+  department: EE
+  grade: 1
+  term: first
+  year: 2010
+  kind: exam	

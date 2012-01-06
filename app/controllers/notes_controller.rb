@@ -87,4 +87,13 @@ class NotesController < ApplicationController
   def images
       @images = NoteImage.all
   end
+  
+  def listing
+    if params[:grade] != nil
+      @notes = Note.find_all_by_department_and_grade(params[:department], params[:grade])
+    else
+      @notes = Note.find_all_by_department(params[:department])
+    end
+  end
+  
 end

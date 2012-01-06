@@ -1,3 +1,7 @@
-<%= link_to "Back to note", note_path(params[:note_id]) %>
-<%= link_to "Open full size", note_image.image_url.to_s %>
-<%= image_tag note_image.image_url.to_s, class: "note-image-full" %>
+<%= div_for(note_image) do %>
+	<%= link_to "Back to note", note_path(params[:note_id]) %>,
+	<%= link_to "Open full size", note_image.image_url.to_s %>
+	<%= image_tag note_image.image_url.to_s, class: "note-image-full" %>
+
+	<%= link_to "delete", note_note_image_path(note_image.note,note_image), method: :delete %>
+<% end %>

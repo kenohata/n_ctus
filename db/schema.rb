@@ -48,8 +48,11 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
   create_table "notes", :force => true do |t|
     t.string   "title"
     t.string   "department"
+    t.integer  "grade"
     t.string   "teacher"
-    t.text     "description"
+    t.string   "term"
+    t.integer  "year"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

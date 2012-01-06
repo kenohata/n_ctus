@@ -3,8 +3,11 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :title
       t.string  :department
+      t.integer :grade
       t.string  :teacher
-      t.text  :description
+      t.string  :term
+      t.integer :year
+      t.string  :kind
 
       t.timestamps
     end

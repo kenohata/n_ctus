@@ -1,0 +1,12 @@
+<%= div_for(note) do %>
+	<h2><%= link_to note.title, note_path(note) %></h2>
+	<span class="smaller">
+	teacher: <%= note.teacher %> / 
+	department: <%= note.department %> / 
+	year: <%= note.year %> / 
+	term: <%= note.term %> / 
+	kind: <%= note.kind %> / 
+	created: <%= note.created_at.to_s(:short) %> / 
+	updated: <%= note.updated_at.to_s(:short) %>
+	</span>
+<% end %>

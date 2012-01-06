@@ -74,6 +74,7 @@ class NoteImagesController < ApplicationController
   # DELETE /note_images/1.json
   def destroy
     @note_image = NoteImage.find(params[:id])
+    @note_image.remove_image!
     @note_image.destroy
 
     respond_to do |format|
