@@ -1,0 +1,19 @@
+<%= div_for(profile) do %>
+	<div class="avatar-pain">
+		<%= avatar_image_thumb(profile.user) %>
+	</div>
+	<div class="main clearfix">
+		<h3><%= profile.name %></h3>
+		<span>
+			<%= link_to profile.user.student_number, user_profile_path(profile) %> / 
+			<%= profile.user.department %> / 
+			<%= profile.grade %>th grade / 
+			<%= read_or_unread(profile.user) %>
+		</span>
+		<div class="bio">
+			<%= simple_format escape_once profile.bio %>
+		</div>
+		<span><%= link_to profile.url, profile.url, target: "blank" if profile.url != nil %></span>
+	</div>
+<% end %>
+<hr />

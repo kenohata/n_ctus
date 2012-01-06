@@ -3,7 +3,7 @@ class ReadingsController < ApplicationController
   # GET /readings.json
   def index
     # @readings = Reading.all
-    @readings = User.find(params[:user_id]).readings
+    @profiles = Reading.find_all_by_user_id(params[:user_id]).map{|i| i.reading_user.profile }
 
     respond_to do |format|
       format.html # index.html.erb

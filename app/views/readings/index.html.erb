@@ -1,17 +1,3 @@
 <h1>Users you're reading</h1>
 
-<table>
-  <tr>
-    <th>Readed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @readings.each do |reading| %>
-  <tr>
-    <td><%= reading.readed_id %></td>
-    <td><%= link_to 'Destroy', user_reading_path(reading.user, reading), confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render partial: @profiles %>

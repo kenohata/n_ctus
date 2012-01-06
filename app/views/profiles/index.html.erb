@@ -1,22 +1,3 @@
 <h1>Listing profiles</h1>
 
-<table>
-  <tr>
-    <th>Avatar</th>
-    <th>Name</th>
-	<th>Department</th>
-    <th>Grade</th>
-  </tr>
-
-<% @profiles.each do |profile| %>
-  <tr>	
-  	<td><%= avatar_image_thumb profile.user %></td>
-    <td><%= link_to profile.name, user_profile_path(profile.user) %></td>
-	<td><%= profile.user.department %></td>
-    <td><%= profile.grade %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<%= render partial: @profiles %>
