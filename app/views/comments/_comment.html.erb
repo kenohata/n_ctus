@@ -3,6 +3,12 @@
 		<%= avatar_image_thumb(comment.user) %>
 	</div>
 	<div class="comment-body, clearfix">
-		<%= comment.content %>
+		<div class="comment-header">
+			<%= link_to comment.user.profile.name, user_profile_path(comment.user) %>
+			<%= read_or_unread(comment.user) %>
+		</div>
+		<div class="comment-content">
+			<%= comment.content %>
+		</div>
 	</div>
 <% end %>

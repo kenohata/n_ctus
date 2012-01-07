@@ -44,6 +44,7 @@ class CommentsController < ApplicationController
   def create
     # @comment = Comment.new(params[:comment])
     @comment = current_user.comments.build(params[:comment])
+    @comment.micropost_id = params[:micropost_id]
 
     respond_to do |format|
       if @comment.save

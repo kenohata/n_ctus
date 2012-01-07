@@ -3,9 +3,11 @@ class NoteImagesController < ApplicationController
   # GET /note_images.json
   def index
     @note_images = Note.find(params[:note_id]).note_images
+    @departments = Department.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      # format.html # index.html.erb
+      format.html { render layout: "note_images_show", template: "note_images/index"}
       format.json { render json: @note_images }
     end
   end

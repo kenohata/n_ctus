@@ -3,7 +3,6 @@
 <% @note.note_images.each do |f| %>
 	<%= link_to(image_tag(f.image_url(:thumb).to_s), note_note_image_path(@note, f)) %>
 <% end %><br />
-<%= link_to "View all images", note_note_images_path(@note) %>
 
 <hr>
 
@@ -16,6 +15,5 @@
 
 <hr />
 
-<%= link_to "NoteImage index", note_note_images_path(@note) %> | 
 <%= link_to "New Note Image", new_note_note_image_path(@note) %> | 
 <%= link_to 'Edit', edit_note_path(@note) %>

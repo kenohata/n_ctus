@@ -17,8 +17,8 @@ Connectus::Application.routes.draw do
   end
 
   resources :notes, constraints: {id: /[0-9]+/} do
-    get "images", :action => :images, :on => :collection
-    resources :note_images
+    # get "images", :action => :images, :on => :collection
+    resources :note_images, except: [:index,]
     resources :pages, except: [:index, :new]  
     match ':department(/:grade(/:kind))' => "notes#listing",
      constraints: {department: /[A-Z]{2}/, grade: /[1-4]/}, on: :collection, as: "listing"
@@ -26,7 +26,7 @@ Connectus::Application.routes.draw do
   
   get "campus" => "static_pages#campus"
   get "reading" => "static_pages#reading"
-    
+  
   root :to => "static_pages#campus"
 
   # The priority is based upon order of creation:
