@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email,:student_id, :password, :password_confirmation, :remember_me
   
   has_one :profile
   has_many :microposts
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :readings
   has_many :reading_users, class_name: "User", through: :readings
   
-  before_validation :student_number_to_email
+  before_validation :email_eq_student_id
   after_create :generate_profile
   
   def generate_profile
@@ -23,12 +23,8 @@ class User < ActiveRecord::Base
     profile.save
   end
   
-  def student_number_to_email
-    self.email = "j#{self.email}@ed.tus.ac.jp"
-  end
-  
-  def email_to_student_number
-    self.email = self.email[1,7]
+  def email_eq_student_id
+    email = "j#{student_id}@ed.tus.ac.jp"
   end
   
   def student_number

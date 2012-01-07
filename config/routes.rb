@@ -1,8 +1,8 @@
 Connectus::Application.routes.draw do
 
-  devise_for :users, controller: { registrations: "registrations",
-    sessions: "devise/sessions",
-    passwords: "devise/passwords"}
+  devise_for :users, controllers: { registrations: "registrations",
+    sessions: "sessions",
+    passwords: "passwords"}
 
   resources :users do
     get "profiles", on: :collection, controller: "profiles", action: "index"

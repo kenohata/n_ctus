@@ -1,10 +1,7 @@
-class SessionsController < Devise::SessionsController
-  # require "email2student"
-  # include Email2student
-  before_filter :student_to_email
-  
-  def student_to_email
-    # resource.email = "j#{resource.email}@ed.tus.ac.jp"
-    params[:user][:email] = "j#{params[:user][:email]}@ed.tus.ac.jp"
-  end
+class SessionsController < Devise:
+  before_filter :email_eq_student_id, only: :create
+
+  def email_eq_student_id
+    params[:user][:email] = "j#{params[:user][:student_id]}@ed.tus.ac.jp"
+  end:SessionsController
 end
