@@ -1,5 +1,24 @@
-<ul>
-<% @notes.each do |n| %>
-	<li><%= n.title %>
+<ul id="note-browser">
+<% @departments.each do |department,grades| %>
+	<li class="department"><%= link_to department, listing_notes_path(department: department) %>
+		<ul>
+			<% 0.upto(grades.length-1) do |i| %>
+				<% if grades[i].length != 0 %>
+					<li class="grade"><%= link_to((i+1).to_s+department,
+					 listing_notes_path(department: department, grade: i+1)) %>
+						<ul>
+							<% grades[i].each do |note| %>
+								<li class="note"><%= link_to note.title, note %>
+									<ul>
+										<% note.note_images.each do |image| %>
+											<li class="note_image"><%= link_to image.title,
+											 note_note_image_path(image.note, image) %>
+										<% end %>
+									</ul>
+							<% end %>
+						</ul>
+				<% end #endif %>
+			<% end %>
+		</ul>
 <% end %>
 </ul>

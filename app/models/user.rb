@@ -22,23 +22,29 @@ class User < ActiveRecord::Base
     profile = Profile.new(user_id: self.id)
     profile.save
   end
-  
+
   def department
-    @mapping_hash = {
-      "61" => "MA",
-      "62" => "PH",
-      "63" => "",
-      "64" => "",
-      "65" => "",
-      "66" => "",
-      "67" => "",
-      "68" => "",
-      "69" => "",
-      "70" => "",
-      "71" => "",
-      "72" => "",
-      "73" => "EE"
-    }[student_id.to_s[0,2]]
+    @@mapping_hash[student_id.to_s[0,2]]
   end
+  
+  def mapping_hash
+    @@mapping_hash
+  end
+  
+  @@mapping_hash = {
+    "61" => "MA",
+    "62" => "PH",
+    "63" => "II",
+    "64" => "II",
+    "65" => "II",
+    "66" => "II",
+    "67" => "II",
+    "68" => "II",
+    "69" => "II",
+    "70" => "II",
+    "71" => "II",
+    "72" => "II",
+    "73" => "EE"
+  }
   
 end
