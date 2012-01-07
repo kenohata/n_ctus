@@ -14,9 +14,10 @@ class NoteImagesController < ApplicationController
   # GET /note_images/1.json
   def show
     @note_image = NoteImage.find(params[:id])
+    @notes = Note.all
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render layout: "note_images_show", template: "note_images/show"}
       format.json { render json: @note_image }
     end
   end

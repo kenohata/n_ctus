@@ -89,7 +89,9 @@ class NotesController < ApplicationController
   end
   
   def listing
-    if params[:grade] != nil
+    if params[:kind] != nil
+      @notes = Note.find_all_by_department_and_grade_and_kind(params[:department], params[:grade],params[:kind])
+    elsif params[:grade] != nil
       @notes = Note.find_all_by_department_and_grade(params[:department], params[:grade])
     else
       @notes = Note.find_all_by_department(params[:department])

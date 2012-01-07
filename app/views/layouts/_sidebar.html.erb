@@ -7,7 +7,7 @@
 	<li class="<%= li_point("reading") %>"><%= link_to "Reading", reading_path %>
 	<li><%= link_to "Read users", user_readings_path(current_user.id) %>
 	<li><%= link_to "Users", profiles_users_path %>
-	<li><%= link_to "Notes", notes_path %>
+	<li><%= link_to "Notes", listing_notes_path(department: current_user.department, grade: current_user.profile.grade) %>
 	<li><%= link_to "Note images", images_notes_path %>
 </ol>
 

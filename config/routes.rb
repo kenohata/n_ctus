@@ -20,7 +20,8 @@ Connectus::Application.routes.draw do
     get "images", :action => :images, :on => :collection
     resources :note_images
     resources :pages, except: [:index, :new]  
-    match ":department(/:grade)" => "notes#listing", constraints: {department: /[A-Z]{2}/, grade: /[1-4]/}, on: :collection
+    match ':department(/:grade(/:kind))' => "notes#listing",
+     constraints: {department: /[A-Z]{2}/, grade: /[1-4]/}, on: :collection, as: "listing"
   end
   
   get "campus" => "static_pages#campus"

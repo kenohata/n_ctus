@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   has_many :direct_messages, foreign_key: "to_id"
   has_many :readings
   has_many :reading_users, class_name: "User", through: :readings
+  has_many :pages
   
-  before_validation :email_eq_student_id
   after_create :generate_profile
   
   def generate_profile
@@ -23,23 +23,22 @@ class User < ActiveRecord::Base
     profile.save
   end
   
-  def email_eq_student_id
-    email = "j#{student_id}@ed.tus.ac.jp"
-  end
-  
-  def student_number
-    self.email[1,7]
-  end
-  
   def department
-    case student_number.to_s[0,2].to_i
-      when 62
-        "PH"
-      when 73
-        "EE"
-      else
-        "none"
-    end
+    @mapping_hash = {
+      "61" => "MA",
+      "62" => "PH",
+      "63" => "",
+      "64" => "",
+      "65" => "",
+      "66" => "",
+      "67" => "",
+      "68" => "",
+      "69" => "",
+      "70" => "",
+      "71" => "",
+      "72" => "",
+      "73" => "EE"
+    }[student_id.to_s[0,2]]
   end
   
 end
