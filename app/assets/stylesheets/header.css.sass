@@ -2,24 +2,62 @@
 
 #header
 	background-image: url("header_background.png")
-
-	h1
-		float: left
-		width: 400px
-		color: #666
-
-	a:link,a:hover,a:visited,a:active
-		color: #eee
-	ul
-		display: block
-		background-color: #0f0
-		font-size: 12px
-
-	ul:last-child
-		float: none
+	height: 40px
 	
-	li
-		width: 100px
+	.container
+		width: $container_width
 		height: 40px
-		float: left
-		overflow: hidden
+		height: 0
+		margin: 0 auto
+		padding: 0
+		
+		.logo
+			float: left
+			margin: 3px 5px 0 0
+		
+		h1
+			float: left
+			width: 200px
+			height: 40px
+			color: white
+			font-size: 22px
+			margin: 0 300px 0 0
+			padding: 3px
+	
+		ul
+			display: block
+			background-color: #0f0
+			font-size: 12px
+			margin: 0
+			padding: 0
+
+		ul:last-child
+			float: none
+	
+			li
+				width: 90px
+				height: 40px
+				float: left
+				text-align: center
+				margin: 0
+				padding: 0px 0 0 0
+				overflow: hidden
+				border-left: solid 1px #666666
+			
+				a:link,a:visited,a:active
+					display: block
+					width: 90px
+					height: 30px
+					padding: 10px 0 0 0
+					color: #eee
+					font-size: 13px
+								
+				a:hover
+					background-color: #5bc15b
+			
+			li.setting,li.home
+				width: 60px
+				a
+					width: 60px
+			li.logout
+				border-right: solid 1px #666666
