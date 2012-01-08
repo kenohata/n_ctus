@@ -1,4 +1,5 @@
 class NoteImagesController < ApplicationController
+  load_and_authorize_resource
   # GET /note_images
   # GET /note_images.json
   def index

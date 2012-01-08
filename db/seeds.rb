@@ -12,7 +12,8 @@ u=User.new(
   :id => 1,
   :email => "j6210025@ed.tus.ac.jp",
   :student_id => 6210025 ,
-  :password => "rikadai"
+  :password => "rikadai",
+  :role  => "admin"
 ).confirm!
 
 User.find(1).profile.update_attributes  id: 1,

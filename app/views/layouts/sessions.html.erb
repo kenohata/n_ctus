@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connectus</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="<%= controller.controller_name %>">
+	<div id="wrapper">
+		<div id="header">
+			<%= render :partial  => "layouts/header" %>
+		</div>
+		<div id="main" class="container">
+			<p class="devise-notice"><%= notice %></p>
+			<p class="devise-alert"><%= alert %></p>
+			<%= yield %>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<%= render :partial => "layouts/footer" %>
+		</div>
+	</div>
+</body>
+</html>

@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "student_id"
+    t.string   "role"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

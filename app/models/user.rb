@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email,:student_id, :password, :password_confirmation, :remember_me
+  attr_accessible :email,:student_id, :password, :password_confirmation, :remember_me, :role
   
   has_one :profile
   has_many :microposts
@@ -24,27 +24,26 @@ class User < ActiveRecord::Base
   end
 
   def department
-    @@mapping_hash[student_id.to_s[0,2]]
+    {
+      "61" => "MA",
+      "62" => "PH",
+      "63" => "II",
+      "64" => "II",
+      "65" => "II",
+      "66" => "II",
+      "67" => "II",
+      "68" => "II",
+      "69" => "II",
+      "70" => "II",
+      "71" => "II",
+      "72" => "II",
+      "73" => "EE"
+    }[student_id.to_s[0,2]]
   end
   
-  def mapping_hash
-    @@mapping_hash
+  # ROLES=%w[admin author]
+  def role?(role)
+    # ROLES.include? role.to_s
+    ["admin","staff"].include? role.to_s
   end
-  
-  @@mapping_hash = {
-    "61" => "MA",
-    "62" => "PH",
-    "63" => "II",
-    "64" => "II",
-    "65" => "II",
-    "66" => "II",
-    "67" => "II",
-    "68" => "II",
-    "69" => "II",
-    "70" => "II",
-    "71" => "II",
-    "72" => "II",
-    "73" => "EE"
-  }
-  
 end

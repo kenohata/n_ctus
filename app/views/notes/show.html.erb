@@ -15,5 +15,7 @@
 
 <hr />
 
+<% if can? :manage, @note %>
 <%= link_to "New Note Image", new_note_note_image_path(@note) %> | 
 <%= link_to 'Edit', edit_note_path(@note) %>
+<% end %>
