@@ -4,6 +4,8 @@ class DirectMessagesController < ApplicationController
   def index
     # @direct_messages = DirectMessage.all
     @direct_messages = current_user.direct_messages
+    
+    @conv_users = User.find_all_by_id(DirectMessage.conversation_user_ids(current_user))
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +18,8 @@ class DirectMessagesController < ApplicationController
   def show
     @direct_message = DirectMessage.find(params[:id])
     @direct_message.update_attribute(:unread, false)
+    
+    @new_dm = current_user.direct_messages.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +32,10 @@ class DirectMessagesController < ApplicationController
   def new
     # @direct_message = DirectMessage.new
     @direct_message = User.find(params[:user_id]).direct_messages.build
-
+    
+    if current_user.id == params[:user_id]
+    end
+        
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @direct_message }

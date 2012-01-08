@@ -1,21 +1,13 @@
 <h1>Listing direct messages</h1>
 
-<table>
-  <tr>	
-    <th>Unread</th>
-    <th>From</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>	
-  </tr>
-
-<% @direct_messages.each do |dm| %>
-  <tr>	
-  	<td><%= dm.unread %></td>
-    <td><%= link_to dm.from_user.profile.name, user_profile_path(dm.from_user) %></td>
-    <td><%= dm.content[0,15] %><%= "..." if dm.content.length > 15 %></td>
-	<td><%= link_to "Read more", user_direct_message_path(current_user, dm) %></td>
-    <td><%= link_to 'Destroy', user_direct_message_path(current_user, dm), confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% @conv_users.each do |i| %>
+	<%= link_to i.profile.name, user_profile_path(i) %><br />
+	<%= i.last_dm_with(current_user).from_user.profile.name %> said 
+	<%= i.last_dm_with(current_user).content %>
+	<%= link_to "show", user_direct_message_path(current_user,i.last_dm_with(current_user)) %>
+	<hr>
 <% end %>
+
+<%= @conv_users.map{ |i| i.id} %>
+
 </table>

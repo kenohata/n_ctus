@@ -3,7 +3,7 @@
 	<%= link_to(image_tag(@profile.avatar_url(:middle).to_s), @profile.avatar.to_s, target: "blank") %><br />
 	<%= link_to "show detail", detail_user_profile_path(@profile.user), class: "button" %><br />
 		<%= link_to "reading users", user_readings_path(@profile.user), class: "button" %><br />
-	<% if @profile.user.id != current_user.id %>
+	<% if @profile.user_id != current_user.id %>
 		<%= link_to "send message", new_user_direct_message_path(@profile.user), class: "button" %><br />
 	<% else %>
 	<%= link_to "edit profile", edit_user_profile_path(@profile), class: "button" %><br />

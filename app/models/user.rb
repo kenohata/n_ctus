@@ -46,4 +46,20 @@ class User < ActiveRecord::Base
     # ROLES.include? role.to_s
     ["admin","staff"].include? role.to_s
   end
+  
+  def last_dm_with(user)
+    @latest_sent = DirectMessage.find_by_from_id_and_to_id(self.id, user.id)
+    @latest_received = DirectMessage.find_by_from_id_and_to_id(user.id, self.id)
+    if @latest_sent == nil 
+      @latest_received
+    elsif @latest_received == nil
+      @latest_sent
+    else
+      if @latest_sent.created_at > @latest_received.created_at
+        @latest_sent
+      else
+        @latest_received
+      end
+    end
+  end
 end

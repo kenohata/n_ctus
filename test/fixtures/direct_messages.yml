@@ -13,3 +13,10 @@ two:
   to_id: 1
   content: いいですよ。おまちしております。
   unread: true
+
+three:
+  id: 3
+  from_id: 3
+  to_id: 1
+  content: testing twise sending
+  unread: true
