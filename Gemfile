@@ -9,6 +9,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'cancan'
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,6 +43,6 @@ group :test do
 end
 
 group :production do
-	gem 'pg'
-	gem 'therubyracer-heroku'
+	gem "pg", "~> 0.12.2"
+	gem 'therubyracer-heroku'," ~> 0.8.1.pre3"
 end
