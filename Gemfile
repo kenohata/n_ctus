@@ -5,12 +5,10 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'cancan'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,7 +32,16 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :development, :test do
+	gem 'sqlite3'
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :production do
+	gem 'pg'
+	gem 'therubyracer-heroku'
 end
