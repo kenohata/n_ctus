@@ -2,10 +2,10 @@
 
 one:
   id: 1
-  user_id: 1
-  readed_id: 3
+  user_id: 6210025
+  readed_id: 7310059
 
 two:
   id: 2
-  user_id: 3
-  readed_id: 1
+  user_id: 7310059
+  readed_id: 6210025

@@ -6,9 +6,8 @@ Connectus::Application.routes.draw do
 
   resources :users do
     get "profiles", on: :collection, controller: "profiles", action: "index"
-    resource :profile, except: [:new, :create, :destroy] do
-      get "detail"
-    end
+    get "about", on: :member, controller: "static_pages", action: "about"
+    resource :profile, except: [:new, :create, :destroy]
     resources :readings, only: [:index, :create, :destroy]
     resources :microposts, only: [:index, :create, :destroy] do
       resources :comments, only: [:new, :create, :destroy]

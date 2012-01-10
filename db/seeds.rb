@@ -16,8 +16,8 @@ u=User.new(
   :role  => "admin"
 ).confirm!
 
-User.find(1).profile.update_attributes  id: 1,
-  user_id: 1,
+User.find(6210025).profile.update_attributes  id: 1,
+  user_id: 6210025,
   name: "ハタケン(大畠 健)",
   grade: 2,
    url: "http://planforgrowth.org/",
@@ -25,27 +25,27 @@ User.find(1).profile.update_attributes  id: 1,
 Ruby/Ruby on Rails/Ubuntu/Linux/C++/Python/"
 
 u=User.new(
-  :id => 2,
+  :id => 7310041,
   :email => "j7310041@ed.tus.ac.jp",
   :student_id => 7310041,
   :password => "rikadai"
 ).confirm!
 
-User.find(2).profile.update_attributes   id: 2,
-  user_id: 2,
+User.find(7310041).profile.update_attributes   id: 2,
+  user_id: 7310041,
   name: "Kazuiest",
   grade: 1
 
 
 u=User.new(
-  :id => 3,
+  :id => 7310059,
   :email => "j7310059@ed.tus.ac.jp",
   :student_id => 7310059,
   :password => "rikadai"
 ).confirm!
 
-User.find(3).profile.update_attributes   id: 3,
-  user_id: 3,
+User.find(7310059).profile.update_attributes   id: 3,
+  user_id: 7310059,
   name: "ワッキー(斉脇)",
   grade: 1,
   url: "http://undapt.jp/",

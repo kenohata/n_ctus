@@ -2,20 +2,20 @@
 
 one:
   id: 1
-  user_id: 1
+  user_id: 6210025
   content: My first tweet.はじめてtwitterやってみました。
 
 two:
   id: 2
-  user_id: 1
+  user_id: 6210025
   content: こんなかんじでいいんだろうか
 
 three:
   id: 3
-  user_id: 3
+  user_id: 7310059
   content: 斉脇ですはじめまして。
 
 four:
   id: 4
-  user_id: 1
+  user_id: 6210025
   content: うおっ斉脇キター

@@ -8,7 +8,7 @@
 	<%= link_to "edit profile", edit_user_profile_path(@profile), class: "button" %><br />
 	<% end %>
 </div>
-<div id="profile-content">
+<div id="profile-content" class="clearfix">
 	<h2><%= @profile.user.student_id %> - <%= @profile.name %></h2>
 	<span style="color:#666;display:block;">
 		<%= @profile.user.department %>/
@@ -21,3 +21,5 @@
 		<%=	simple_format @profile.bio %>
 	</div>
 </div>
+
+<%= render @profile.user.microposts %>
