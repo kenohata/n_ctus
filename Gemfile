@@ -10,6 +10,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'cancan'
 gem 'heroku'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.

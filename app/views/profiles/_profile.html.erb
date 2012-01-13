@@ -4,10 +4,10 @@
 	</div>
 	<div class="main clearfix">
 		<span class="profile-name">
-			<%= link_to profile.name, user_profile_path(profile) %>
+			<%= link_to profile.name, user_profile_path(profile.user) %>
 		</span>
 		<span>
-			<%= link_to profile.user.student_id, user_profile_path(profile) %> / 
+			<%= link_to profile.user.student_id, user_profile_path(profile.user) %> / 
 			<%= profile.user.department %> / 
 			<%= profile.grade %>th grade / 
 			<%= link_to profile.url, profile.url, target: "blank" if profile.url != nil %> / 

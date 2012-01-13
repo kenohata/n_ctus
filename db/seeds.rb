@@ -9,7 +9,7 @@
 
 
 u=User.new(
-  :id => 1,
+  # :id => 1,
   :email => "j6210025@ed.tus.ac.jp",
   :student_id => 6210025 ,
   :password => "rikadai",
@@ -25,7 +25,7 @@ User.find(6210025).profile.update_attributes  id: 1,
 Ruby/Ruby on Rails/Ubuntu/Linux/C++/Python/"
 
 u=User.new(
-  :id => 7310041,
+  # :id => 7310041,
   :email => "j7310041@ed.tus.ac.jp",
   :student_id => 7310041,
   :password => "rikadai"
@@ -38,7 +38,7 @@ User.find(7310041).profile.update_attributes   id: 2,
 
 
 u=User.new(
-  :id => 7310059,
+  # :id => 7310059,
   :email => "j7310059@ed.tus.ac.jp",
   :student_id => 7310059,
   :password => "rikadai"
