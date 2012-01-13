@@ -1,13 +1,11 @@
 <h1>Listing direct messages</h1>
 
 <% @conv_users.each do |i| %>
-	<%= link_to i.profile.name, user_profile_path(i) %><br />
-	<%= i.last_dm_with(current_user).from_user.profile.name %> said 
-	<%= i.last_dm_with(current_user).content %>
+	<%= render partial: "direct_message", object: i.last_dm_with(current_user) %>
 	<%= link_to "show", user_direct_message_path(current_user,i.last_dm_with(current_user)) %>
 	<hr>
 <% end %>
 
-<%= @conv_users.map{ |i| i.id} %>
+<%# @conv_users.map{ |i| i.id} %>
 
 </table>

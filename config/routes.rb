@@ -17,7 +17,7 @@ Connectus::Application.routes.draw do
 
   resources :notes, constraints: {id: /[0-9]+/} do
     # get "images", :action => :images, :on => :collection
-    resources :note_images, except: [:index,]
+    resources :note_images
     resources :pages, except: [:index, :new]  
     match ':department(/:grade(/:kind))' => "notes#listing",
      constraints: {department: /[A-Z]{2}/, grade: /[1-4]/}, on: :collection, as: "listing"

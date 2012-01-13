@@ -1,3 +1,20 @@
-<%= div_for(@direct_message) do %>
-	<%= @direct_message.content %>
+<%= div_for(direct_message) do %>
+	<div class="dm-side">
+		<%= avatar_image_thumb(direct_message.from_user) %>
+	</div>
+	<div class="dm-main clearfix">
+		<div class="dm-head">
+			<%= link_to direct_message.from_user.profile.name,
+			 user_profile_path(direct_message.from_user) %> said
+		</div>
+		<div class="dm-content">
+			<%= direct_message.content %>
+		</div>
+		<div class="dm-footer">
+			<span class="dm-detail">
+				<%= direct_message.created_at.to_s(:short) %>
+			<span>
+		</div>
+	</div>
 <% end %>
+<hr>

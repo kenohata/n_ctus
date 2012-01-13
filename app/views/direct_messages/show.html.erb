@@ -3,7 +3,7 @@
 <%= render partial: @dms %>
 
 <%= form_for [current_user, @new_dm] do |f| -%>
-  <%= f.text_field :content %>
+  <%= f.text_area :content, size: "40x4" %><br />
   <%= f.hidden_field :to_id, value: @direct_message.to_id %>
   <%= f.submit :submit %>
 <% end -%>

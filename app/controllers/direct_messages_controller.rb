@@ -20,9 +20,9 @@ class DirectMessagesController < ApplicationController
     @direct_message.update_attribute(:unread, false)
     
     @sent_dms = DirectMessage.find_all_by_from_id_and_to_id(@direct_message.from_id, current_user.id)
-    @received_dms = DirectMessage.find_all_by_from_id_and_to_id(current_user.id, @direct_message.from_id)
+    @received_dms = DirectMessage.find_all_by_from_id_and_to_id(current_user.id, @direct_message.to_id)
     
-    @dms = fi@sent_dms + @received_dms
+    @dms = @sent_dms + @received_dms
     
     @new_dm = current_user.direct_messages.build
 
