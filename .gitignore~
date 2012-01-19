@@ -6,3 +6,4 @@ tmp/
 config/environments/development.rb
 public/uploads/*
 *.DS_Store
+app/uploaders/*
