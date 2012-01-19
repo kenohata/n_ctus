@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.integer  "note_id"
     t.string   "title"
     t.string   "image"
+    t.string   "pdf"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

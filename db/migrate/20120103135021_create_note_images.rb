@@ -4,6 +4,7 @@ class CreateNoteImages < ActiveRecord::Migration
       t.integer :note_id
       t.string :title
       t.string :image
+      t.string :pdf
 
       t.timestamps
     end
