@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :department %><br />
-    <%= f.text_field :department %>
+	<%= f.select :department, %w(MA PH EE AR), selected: current_user.department %>
   </div>
   <div class="field">
     <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
+    <%= f.select :grade, %w(1 2 3 4), selected: current_user.profile.grade %>
   </div>
   <div class="field">
     <%= f.label :teacher %><br />
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :term %><br />
-    <%= f.text_field :term %>
+    <%= f.select :term, %w(first latter) %>
   </div>
   <div class="field">
     <%= f.label :year %><br />
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :kind %><br />
-    <%= f.text_field :kind %>
+    <%= f.select :kind, %w(exam note report) %>
   </div>
   <div class="actions">
     <%= f.submit %>

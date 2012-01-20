@@ -1,1 +1,6 @@
 <%= render partial: @notes %>
+
+<%= link_to "All Notes", notes_path %> | 
+<% if can? :manage, :notes %>
+	<%= link_to "Create new note", new_note_path %>
+<% end %>
