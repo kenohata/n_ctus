@@ -9,4 +9,5 @@ CarrierWave.configure do |config|
   config.fog_host       = 'https://s3-ap-northeast-1.amazonaws.com/connectus-note-image-beta'
   config.fog_public     = true
   # config.fog_attributes = {'Cache-Control' => 'max-age=315576000'}
+
 end

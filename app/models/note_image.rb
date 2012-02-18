@@ -16,5 +16,9 @@ class NoteImage < ActiveRecord::Base
       "no_image"
     end
   end
-
+  
+  def before_destroy
+    remove_image! if image != nil
+    remove_pdf! if image != nil
+  end
 end

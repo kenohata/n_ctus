@@ -65,7 +65,8 @@ class NoteImagesController < ApplicationController
 
     respond_to do |format|
       if @note_image.update_attributes(params[:note_image])
-        format.html { redirect_to [@note_image.note, @note_image], notice: 'Note image was successfully updated.' }
+        # format.html { redirect_to [@note_image.note, @note_image], notice: 'Note image was successfully updated.' }
+        format.html { redirect_to @note_image.note, notice: 'Note image was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
