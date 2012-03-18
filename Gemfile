@@ -11,6 +11,7 @@ gem 'rmagick'
 gem 'cancan'
 gem 'heroku'
 gem 'fog'
+gem 'bootstrap-sass', '~> 2.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.

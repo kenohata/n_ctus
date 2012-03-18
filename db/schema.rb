@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.integer  "user_id"
     t.integer  "micropost_id"
     t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "direct_messages", :force => true do |t|
@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.integer  "from_id"
     t.text     "content"
     t.boolean  "unread"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "microposts", :force => true do |t|
     t.integer  "user_id"
     t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "note_images", :force => true do |t|
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "title"
     t.string   "image"
     t.string   "pdf"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notes", :force => true do |t|
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "term"
     t.integer  "year"
     t.string   "kind"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.integer  "user_id"
     t.text     "content"
     t.string   "attachment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -74,15 +74,15 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "avatar"
     t.string   "url"
     t.text     "bio"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "readings", :force => true do |t|
     t.integer  "user_id"
     t.integer  "readed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20120104035031) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
