@@ -1,14 +1,21 @@
-<div id="sidebar">
-	<%= link_to "#{current_user.profile.name}", user_profile_path(current_user) %><br/>
-	<%= avatar_image_thumb current_user %><br />
+<div>
+	<%# link_to "#{current_user.profile.name}", user_profile_path(current_user) %>
+	<%# avatar_image_thumb current_user %>
+        <ul class="nav nav-tabs nav-stacked">
+        	<li><%= link_to "Campus", campus_path %>
+        	<li><%= link_to "Reading", reading_path %>
+        	<li><%= link_to "About", about_user_path(current_user.id) %>
+        	<li><%= link_to "Read users", user_readings_path(current_user.id) %>
+        	<li><%= link_to "Users", profiles_users_path %>
+            	<li><%= link_to "Notes", listing_notes_path(department: current_user.department, grade: current_user.profile.grade) %>
+        </ul>
 
-<ol id="boards_menu">
-	<li class="<%= li_point("campus") %>"><%= link_to "Campus", campus_path %>
-	<li class="<%= li_point("reading") %>"><%= link_to "Reading", reading_path %>
-	<li><%= link_to "About", about_user_path(current_user.id) %>
-	<li><%= link_to "Read users", user_readings_path(current_user.id) %>
-	<li><%= link_to "Users", profiles_users_path %>
-	<li><%= link_to "Notes", listing_notes_path(department: current_user.department, grade: current_user.profile.grade) %>
-</ol>
-
+        <div class="well" style="padding: 8px 0;">
+            <ul class="nav nav-list">
+                <li class="nav-header">Notes
+                <li><a href="#">電磁気</a>
+                <li><a href="#">熱力学</a>
+                <li><a href="#">物理数学</a>
+            </ul>
+        </div>
 </div>

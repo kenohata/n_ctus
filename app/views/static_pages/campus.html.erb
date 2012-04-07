@@ -1,6 +1,6 @@
 <%= form_for([@micropost.user, @micropost]) do |f| -%>
   <%= f.text_area :content, size: "50x4<" %><br />
-  <%= f.submit :submit %>
+  <%= f.submit :submit, class: "btn" %>
 <% end -%>
 
 <hr />

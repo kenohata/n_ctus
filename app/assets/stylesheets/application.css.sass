@@ -1,6 +1,4 @@
-//=require_tree .
-
-@import "bootstrap"
+// require_tree .
 
 $primary_color: #33AE00
 $sub_color: lighten(blue,50)
@@ -13,36 +11,9 @@ $sidebar_width : 180px
 $local_main_width : 400px
 $footer_height: 60px
 
+$navbarBackground: $primary_color
 
+@import "bootstrap"
 
 body
-	color: $font_color
-	
-	a
-		text-decoration: none
-		
-		&:visited,&:active,&:link
-			color: $primary_color
-		
-		&:hover
-			color: $font_color
-		
-	a:hover
-		color: #0f0		
-	
-.clearfix:after 
-	content: "."
-	display: block
-	clear: both
-	height: 0
-	visibility: hidden
-
-
-.clearfix 
-	min-height: 1px
-
-table
-	tr:nth-child(odd)
-		background-color: lighten($primary_color, 55)
-	tr:nth-child(even)
-		background-color: lighten($primary_color, 45)
+    padding-top: 80px

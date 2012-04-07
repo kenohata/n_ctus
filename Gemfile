@@ -35,6 +35,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :development do
+    gem 'wirble'
+end
+
 group :development, :test do
 	gem 'sqlite3'
 end

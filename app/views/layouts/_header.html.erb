@@ -1,16 +1,19 @@
-<div class="container">
-  <div><%= image_tag "logo.png", :title => "title", :class => "logo" %></div>
-	<h1>Connectus</h1>
-	<ul>
-		<li class="home"><%= link_to "ホーム", root_path,class: "home" %>
-		<% if user_signed_in? %>
-		  <li><%= link_to "プロフィール", user_profile_path(current_user) %>
-			<li><%= link_to "メッセージ", user_direct_messages_path(current_user) %>
-			<li class="setting"><%= link_to "設定", edit_user_registration_path %>
-			<li class="logout"><%= link_to "ログアウト", destroy_user_session_path , method: :delete %>
-		<% else %>
-			<li><%= link_to "Sign in", new_user_session_path %>
-			<li><%= link_to "Sign up", new_user_registration_path %>
-		<% end %>
-	</ul>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <%# image_tag "logo.png", :title => "title", :class => "logo" %>
+            <%= link_to "connectus", root_path, class: "brand" %>
+            <ul class="nav pull-right">
+    		    <% if user_signed_in? %>
+    		        <li><%= link_to "プロフィール", user_profile_path(current_user) %>
+    			    <li><%= link_to "メッセージ", user_direct_messages_path(current_user) %>
+    			    <li class="setting"><%= link_to "設定", edit_user_registration_path %>
+    			    <li class="logout"><%= link_to "ログアウト", destroy_user_session_path , method: :delete %>
+    		    <% else %>
+    			    <li><%= link_to "Sign in", new_user_session_path %>
+    			    <li class="pull-right"><%= link_to "Sign up", new_user_registration_path %>
+    		    <% end %>
+            </ul>
+        </div>
+    </div>
 </div>

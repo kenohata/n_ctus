@@ -15,9 +15,9 @@
 		</div>
 		<div class="micropost-footer">
 			<%= link_to "comment", new_user_micropost_comment_path(micropost.user,
-			micropost) %>
+			micropost), class: "btn btn-mini" %>
 			<% if micropost.user == current_user %>
-				<%= link_to "delete" , user_micropost_path(micropost.user, micropost), method: :delete %>
+				<%= link_to "delete" , user_micropost_path(micropost.user, micropost), method: :delete, class: "btn btn-mini btn-danger" %>
 			<% end %>
 		</div>
 	</div>
